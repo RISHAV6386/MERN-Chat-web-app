@@ -20,7 +20,6 @@ const newuser = TryCatch(async (req, res,next) => {
         public_id: results[0].public_id,
         url: results[0].url
     }
-    console.log(results)
 
     const user = await User.create({
         name,
@@ -44,7 +43,6 @@ const login = TryCatch(async (req, res, next) => {
 })
 const getMyProfile = TryCatch(async (req, res, next) => {
     const user = await User.findById(req.user)
-    // console.log(user)
     if (!user) return next(new ErrorHandler("User not found", 404))
     res.status(200).json({
         success: true,
@@ -150,7 +148,6 @@ const getMyFriends = TryCatch(async (req, res, next) => {
     const chats = await Chat.find({ members: req.user, groupChat: false }).populate("members", "name avatar")
     const friends = chats.map(({ members }) => {
         const otherUser = getOtherMember(members, req.user);
-        console.log(otherUser)
         return {
             _id: otherUser._id,
             name: otherUser.name,

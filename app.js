@@ -56,11 +56,9 @@ io.use((socket, next) => {
 
 })
 io.on("connection", (socket) => {
-    console.log("user connected", socket.id);
 const user = socket.user
     userSocketIds.set(user._id.toString(), socket.id)
     socket.on('NEW_MESSAGE', async ({ chatId, members, message }) => {
-        console.log("emmiting", members)
 
         const messageForRealTime = {
             content: message,
