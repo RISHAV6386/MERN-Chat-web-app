@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +8,7 @@
     "dev": "SET NODE_ENV =DEVELOPMENT && nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rishav Rajput",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -30,5 +29,13 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.7",
     "nodemon": "^3.1.4"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Chatapp"
+  },
+  "description": ""
 }
